@@ -4,16 +4,30 @@ const projects = [
   {
     title: "Few Steps Meals",
     description:
-      "A simple meal planning app that helps users create easy recipes with minimal steps.",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "API Integration"],
-    link: "https://github.com/mrmerarif/few-steps-meals",
+      "A simple meal planning app that helps users create easy recipes with minimal steps and responsive design.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://mrmerarif.github.io/wdd131/few-steps-meals/index.html",
   },
   {
-    title: "Car Troubleshooting Helper",
+    title: "Few Steps Meals Blog",
     description:
-      "A tool that helps users diagnose car issues based on symptoms and provides repair suggestions.",
-    technologies: ["JavaScript", "Node.js", "NHTSA API"],
-    link: "https://github.com/mrmerarif/car-helper",
+      "A companion blog page for the Few Steps Meals project, featuring recipe posts and clean responsive layout.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    link: "https://mrmerarif.github.io/wdd131/few-steps-meals/blog.html",
+  },
+  {
+    title: "Basic Layout (WDD130)",
+    description:
+      "A responsive layout project demonstrating structured design principles and flexible page composition using CSS.",
+    technologies: ["HTML", "CSS"],
+    link: "https://mrmerarif.github.io/wdd130/week02/basic-layout.html",
+  },
+  {
+    title: "Media Query (WDD131)",
+    description:
+      "A project showcasing responsive design using CSS media queries to adapt layouts for different screen sizes.",
+    technologies: ["HTML", "CSS"],
+    link: "https://mrmerarif.github.io/wdd131/week02/media-query.html",
   },
 ];
 

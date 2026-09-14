@@ -8,7 +8,7 @@ export default function NavLinks() {
 
   const linkClasses = (path: string) =>
     pathname === path
-      ? "underline font-bold text-yellow-300"
+      ? "underline font-bold text-yellow-500"
       : "hover:underline";
 
   return (

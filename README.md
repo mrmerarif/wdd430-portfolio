@@ -1,37 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WDD 430 – Portfolio Project
 
-## Getting Started
+This is a Next.js portfolio project built with the App Router, TypeScript, and Tailwind CSS.  
+It was created using `create-next-app` and deployed on Vercel.
 
-First, run the development server:
+---
+
+## 🚀 Deployment
+
+**Live Site:**  
+https://wdd430-portfolio-navy.vercel.app/
+
+**GitHub Repository:**  
+https://github.com/mrmerarif/wdd430-portfolio
+
+---
+
+## 📁 Project Overview
+
+This portfolio displays several projects I have built in previous courses (WDD130, WDD131).  
+Each project includes a title, description, technologies used, and a working deployed link.
+
+### Featured Projects
+
+- **Few Steps Meals**  
+  A simple meal planning app that helps users create easy recipes with minimal steps.  
+  https://mrmerarif.github.io/wdd131/few-steps-meals/index.html
+
+- **Few Steps Meals Blog**  
+  A companion blog page featuring recipe posts and responsive layout.  
+  https://mrmerarif.github.io/wdd131/few-steps-meals/blog.html
+
+- **Basic Layout (WDD130)**  
+  A responsive layout demonstrating structured design principles using CSS.  
+  https://mrmerarif.github.io/wdd130/week02/basic-layout.html
+
+- **Media Query (WDD131)**  
+  A project showcasing responsive design using CSS media queries.  
+  https://mrmerarif.github.io/wdd131/week02/media-query.html
+
+---
+
+## 🧩 Custom Component
+
+**Filename:** `SkillsCard.tsx`  
+**Description:**  
+A server component that displays a list of technical skills using Tailwind CSS styling.
+
+---
+
+## 📘 Assignment Questions
+
+### 1. What is the purpose of `app/layout.tsx` in the Next.js App Router?
+`app/layout.tsx` defines the root layout shared across all pages. It loads global styles, wraps the application with common UI (Header, Footer), and ensures consistent structure across routes.
+
+### 2. Why are the components in this assignment Server Components rather than Client Components?
+Server Components improve performance by rendering on the server, reduce JavaScript sent to the browser, and are the recommended default in the Next.js App Router unless client-side interactivity is required.
+
+---
+
+## 🛠 Getting Started
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-https://wdd430-portfolio-navy.vercel.app/
