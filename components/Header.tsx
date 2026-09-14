@@ -1,4 +1,6 @@
-import Link from 'next/link';
+'use client';
+
+import NavLinks from "./NavLinks";
 
 export default function Header() {
   return (
@@ -8,19 +10,7 @@ export default function Header() {
           Merari Flores
         </div>
 
-        <nav>
-          <ul className="flex gap-6 text-lg">
-            <li>
-              <Link href="/" className="hover:underline">Home</Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:underline">About</Link>
-            </li>
-            <li>
-              <Link href="/projects" className="hover:underline">Projects</Link>
-            </li>
-          </ul>
-        </nav>
+        <NavLinks />
       </div>
     </header>
   );
