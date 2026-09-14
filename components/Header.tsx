@@ -11,14 +11,13 @@ export default function Header() {
         <nav>
           <ul className="flex gap-6 text-lg">
             <li>
-              <Link href="/" className="hover:underline">
-                Home
-              </Link>
+              <Link href="/" className="hover:underline">Home</Link>
             </li>
             <li>
-              <Link href="/about" className="hover:underline">
-                About
-              </Link>
+              <Link href="/about" className="hover:underline">About</Link>
+            </li>
+            <li>
+              <Link href="/projects" className="hover:underline">Projects</Link>
             </li>
           </ul>
         </nav>

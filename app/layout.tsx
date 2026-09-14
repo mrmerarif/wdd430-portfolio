@@ -7,7 +7,6 @@ export const metadata = {
   description: "Portfolio website for WDD430 showcasing projects and skills.",
 };
 
-
 export default function RootLayout({
   children,
 }: {
