@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 export default function NavLinks() {
   const pathname = usePathname();
 
-  // Fix: allow /projects, /projects/school, /projects/opensource
+  // Fix hydration mismatch: allow all /projects subroutes
   const isActive = (path: string) => {
     if (path === "/projects") {
       return pathname.startsWith("/projects");
@@ -23,7 +23,7 @@ export default function NavLinks() {
     <nav aria-label="Primary Navigation">
       <ul className="flex gap-6 text-lg">
 
-        {/* Home (Week 1 Portfolio) */}
+        {/* Home */}
         <li>
           <Link
             href="/"
@@ -34,7 +34,7 @@ export default function NavLinks() {
           </Link>
         </li>
 
-        {/* Projects (Week 2 API pages) */}
+        {/* Projects */}
         <li>
           <Link
             href="/projects"
@@ -45,6 +45,29 @@ export default function NavLinks() {
           </Link>
         </li>
 
+        {/* School */}
+        <li>
+          <Link
+            href="/projects/school"
+            className={linkClasses("/projects/school")}
+            aria-current={isActive("/projects/school") ? "page" : undefined}
+          >
+            School
+          </Link>
+        </li>
+
+        {/* Open Source */}
+        <li>
+          <Link
+            href="/projects/opensource"
+            className={linkClasses("/projects/opensource")}
+            aria-current={isActive("/projects/opensource") ? "page" : undefined}
+          >
+            Open Source
+          </Link>
+        </li>
+
+        {/* About */}
         <li>
           <Link
             href="/about"
@@ -55,6 +78,7 @@ export default function NavLinks() {
           </Link>
         </li>
 
+        {/* Contact */}
         <li>
           <Link
             href="/contact"
