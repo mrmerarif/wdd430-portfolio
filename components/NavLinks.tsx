@@ -6,15 +6,8 @@ import { usePathname } from 'next/navigation';
 export default function NavLinks() {
   const pathname = usePathname();
 
-  const isActive = (path: string) => {
-    if (path === "/projects") {
-      return pathname.startsWith("/projects");
-    }
-    return pathname === path;
-  };
-
   const linkClasses = (path: string) =>
-    isActive(path)
+    pathname === path
       ? "underline font-bold text-yellow-500"
       : "hover:underline";
 
@@ -27,7 +20,7 @@ export default function NavLinks() {
           <Link
             href="/"
             className={linkClasses("/")}
-            aria-current={isActive("/") ? "page" : undefined}
+            aria-current={pathname === "/" ? "page" : undefined}
           >
             Portfolio
           </Link>
@@ -38,7 +31,7 @@ export default function NavLinks() {
           <Link
             href="/projects"
             className={linkClasses("/projects")}
-            aria-current={pathname.startsWith("/projects") ? "page" : undefined}
+            aria-current={pathname === "/projects" ? "page" : undefined}
           >
             Projects
           </Link>
@@ -48,7 +41,7 @@ export default function NavLinks() {
           <Link
             href="/about"
             className={linkClasses("/about")}
-            aria-current={isActive("/about") ? "page" : undefined}
+            aria-current={pathname === "/about" ? "page" : undefined}
           >
             About
           </Link>
@@ -58,7 +51,7 @@ export default function NavLinks() {
           <Link
             href="/contact"
             className={linkClasses("/contact")}
-            aria-current={isActive("/contact") ? "page" : undefined}
+            aria-current={pathname === "/contact" ? "page" : undefined}
           >
             Contact
           </Link>
