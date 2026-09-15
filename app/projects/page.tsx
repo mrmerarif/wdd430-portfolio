@@ -1,7 +1,10 @@
 // app/projects/page.tsx
 
 export default async function ProjectsOverview() {
-  const res = await fetch("/api/projects", { cache: "no-store" });
+  const res = await fetch("http://localhost:3000/api/projects", {
+    cache: "no-store",
+  });
+
   const data = await res.json();
 
   return (
