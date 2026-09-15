@@ -14,13 +14,26 @@ export default function NavLinks() {
   return (
     <nav aria-label="Primary Navigation">
       <ul className="flex gap-6 text-lg">
+
+        {/* Week 1 Portfolio */}
         <li>
           <Link
             href="/"
             className={linkClasses("/")}
             aria-current={pathname === "/" ? "page" : undefined}
           >
-            Home
+            Portfolio
+          </Link>
+        </li>
+
+        {/* Week 2 API Projects */}
+        <li>
+          <Link
+            href="/projects"
+            className={linkClasses("/projects")}
+            aria-current={pathname === "/projects" ? "page" : undefined}
+          >
+            Projects
           </Link>
         </li>
 
@@ -41,16 +54,6 @@ export default function NavLinks() {
             aria-current={pathname === "/contact" ? "page" : undefined}
           >
             Contact
-          </Link>
-        </li>
-
-        <li>
-          <Link
-            href="/projects"
-            className={linkClasses("/projects")}
-            aria-current={pathname === "/projects" ? "page" : undefined}
-          >
-            Projects
           </Link>
         </li>
       </ul>
