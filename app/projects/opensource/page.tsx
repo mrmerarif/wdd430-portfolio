@@ -1,6 +1,8 @@
 import { getProjects } from "@/lib/projects-db";
 
 export default async function OpenSourceProjects() {
+ 
+
   const projects = await getProjects("opensource");
 
   return (

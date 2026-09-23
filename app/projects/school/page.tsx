@@ -1,19 +1,23 @@
-import { getProjects } from "@/lib/projects-db";
+import { Suspense } from "react";
+import SchoolProjectList from "./SchoolProjectList";
 
-export default async function SchoolProjects() {
-  const projects = await getProjects("school");
+function SchoolProjectSkeleton() {
+  return (
+    <div className="animate-pulse space-y-3">
+      <div className="h-5 w-72 rounded bg-slate-200" />
+      <div className="h-5 w-56 rounded bg-slate-200" />
+    </div>
+  );
+}
 
+export default function SchoolProjects() {
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">School Projects</h1>
 
-      <ul className="list-disc ml-6">
-        {projects.map((project) => (
-          <li key={project.id}>
-            {project.title}
-          </li>
-        ))}
-      </ul>
+      <Suspense fallback={<SchoolProjectSkeleton />}>
+        <SchoolProjectList />
+      </Suspense>
     </div>
   );
 }
