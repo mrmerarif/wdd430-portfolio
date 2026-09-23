@@ -1,12 +1,12 @@
 // app/api/projects/[id]/route.ts
 import { NextResponse } from "next/server";
-import { projects } from "@/lib/projects-db";
+import { getProjectById } from "@/lib/projects-db";
 
 export async function GET(
   _request: Request,
   context: { params: Promise<{ id: string }> }
 ) {
-  const { id } = await context.params;   // ⭐ REQUIRED in Next.js 16
+  const { id } = await context.params; // Required for your Next.js 16 setup
 
   const numericId = Number(id);
 
@@ -18,8 +18,7 @@ export async function GET(
     );
   }
 
-  // Find project
-  const project = projects.find((p) => p.id === numericId);
+  const project = await getProjectById(numericId);
 
   // Not found
   if (!project) {

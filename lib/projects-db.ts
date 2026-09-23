@@ -1,13 +1,42 @@
 // lib/projects-db.ts
+import { sql } from "@vercel/postgres";
 
-export type Project = {
+export interface Project {
   id: number;
   title: string;
+  description: string;
   type: "opensource" | "school";
-};
+  technologies: string[];
+  link?: string;
+}
 
-export const projects: Project[] = [
-  { id: 1, title: "Few Steps Meals", type: "school" },
-  { id: 2, title: "My Portfolio Website", type: "school" },
-  { id: 3, title: "Volunteer Project Planner", type: "opensource" }
-];
+export async function getProjects(
+  type?: string | null
+): Promise<Project[]> {
+  if (type) {
+    const { rows } = await sql<Project>`
+      SELECT * FROM projects
+      WHERE type = ${type}
+      ORDER BY id
+    `;
+    return rows;
+  }
+
+  const { rows } = await sql<Project>`
+    SELECT * FROM projects
+    ORDER BY id
+  `;
+
+  return rows;
+}
+
+export async function getProjectById(
+  id: number
+): Promise<Project | null> {
+  const { rows } = await sql<Project>`
+    SELECT * FROM projects
+    WHERE id = ${id}
+  `;
+
+  return rows[0] ?? null;
+}

@@ -1,6 +1,6 @@
 // app/api/projects/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { projects } from "@/lib/projects-db";
+import { getProjects } from "@/lib/projects-db";
 
 // GET /api/projects
 // GET /api/projects?type=opensource
@@ -17,10 +17,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  // Filter if type is provided
-  const filtered = type
-    ? projects.filter((p) => p.type === type)
-    : projects;
+  const projects = await getProjects(type);
 
-  return NextResponse.json(filtered);
+  return NextResponse.json(projects);
 }

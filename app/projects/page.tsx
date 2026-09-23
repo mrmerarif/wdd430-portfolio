@@ -1,6 +1,8 @@
-import { projects } from "@/lib/projects-db";
+import { getProjects } from "@/lib/projects-db";
 
-export default function ProjectsOverview() {
+export default async function ProjectsOverview() {
+  const projects = await getProjects();
+
   return (
     <div>
       <h1 className="text-3xl font-bold mb-4">Projects Overview</h1>
